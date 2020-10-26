@@ -6,6 +6,7 @@
 #include "iclientmode.h"
 #include "chat/ChatPanel.h"
 #include "run/mom_run_safeguards.h"
+#include "spectate/mom_spectator_gui.h"
 
 #include "vgui/ISurface.h"
 
@@ -52,6 +53,9 @@ void CHudChat::StartMessageMode()
 
     SetMouseInputEnabled(true);
     SetKeyBoardInputEnabled(true);
+
+    const auto specGUI = dynamic_cast<CMOMSpectatorGUI *>(gViewPortInterface->FindPanelByName(PANEL_SPECGUI));
+    specGUI->SetMouseInputEnabled(true);
 
     m_pChatContainer->StartMessageMode(MESSAGE_MODE_HUD);
 }
