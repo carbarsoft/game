@@ -241,7 +241,7 @@ int ClientModeMOMNormal::HandleSpectatorKeyInput(int down, ButtonCode_t keynum, 
         engine->ClientCmd("spec_prev");
         return 0;
     }
-    if (FStrEq(pszCurrentBinding, "+jump"))
+    if (FStrEq(pszCurrentBinding, "+jump") || FStrEq(pszCurrentBinding, "toggle_jump"))
     {
         engine->ClientCmd("spec_mode");
         return 0;
